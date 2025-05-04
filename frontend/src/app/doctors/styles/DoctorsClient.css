@@ -1,0 +1,185 @@
+/* Adjust sorting dropdown width to match consult button size */
+.sorting-dropdown {
+  max-width: 200px; /* further decreased width */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 2rem 0.5rem 2.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #02475b;
+  background-color: white;
+  background-image: url('/sort.svg');
+  background-repeat: no-repeat;
+  background-position: 0.5rem center;
+  color: black;
+  font-weight: 300;
+  cursor: pointer;
+  margin: 0 0 1rem 0;
+  position: static !important;
+  float: none !important;
+  height: 50px;
+}
+
+/* Layout for doctor list container to have sidebar, main content, and right help side by side */
+.doctor-list-container {
+  display: flex;
+  gap: 38px;
+  align-items: flex-start;
+  justify-content: space-between; /* Ensure left to right order */
+  margin-top: 7rem;
+}
+
+/* Sidebar width matches FilterBar */
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  order: 1; /* leftmost */
+}
+
+/* Main content fills remaining space */
+.doctor-list-container > div:nth-child(2) {
+  flex-grow: 1;
+  min-width: 0; /* prevent overflow */
+  order: 2; /* middle */
+}
+
+/* Right help card fixed width */
+.right-help-card {
+  width: 200px;
+  flex-shrink: 0;
+  order: 3; /* rightmost */
+  
+}
+
+/* Responsive: stack vertically on small screens */
+@media (max-width: 768px) {
+  .doctor-list-container {
+    flex-direction: column;
+  }
+  .sidebar,
+  .right-help-card,
+  .doctor-list-container > div:nth-child(2) {
+    width: 100%;
+    order: initial;
+  }
+
+  /* Sorting bar hidden on small screens */
+  .sorting-bar {
+    display: none;
+  }
+
+  /* Sorting dropdown visible on small screens */
+  .sorting-dropdown {
+    display: block;
+    max-width: 160px; /* further decreased width */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem 2rem 0.5rem 2.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: white;
+    background-image: url('/sort.svg');
+    background-repeat: no-repeat;
+    background-position: 0.5rem center;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 0 1rem 0;
+    position: static !important;
+    float: none !important;
+  }
+}
+
+/* Sorting bar container */
+.sorting-bar {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 1rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.sorting-bar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Sorting button styles */
+.sorting-button {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 10px; 
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sorting-button.selected {
+  background-color: #008080; /* teal */
+  color: white;
+  border-color: #008080;
+}
+
+.sorting-button:hover {
+  background-color: #006666;
+  color: white;
+  border-color: #006666;
+}
+
+/* Breadcrumb styles to display in one line */
+.breadcrumb {
+  display: block;
+  font-size: 0.8rem;
+  color: #02475b;
+  margin-bottom: 0.5rem;
+}
+
+.breadcrumb-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-link {
+  color: #02475b;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.25rem;
+  color: #000000;
+  user-select: none;
+  font-weight: 700;
+}
+
+.breadcrumb-item.current {
+  color: #02475b;
+  font-weight: 200;
+  white-space: nowrap;
+}
+
+/* Breadcrumb responsive adjustments */
+@media (max-width: 600px) {
+  .breadcrumb-list {
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,219 @@
+.filter-bar {
+  width: 220px;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Hide horizontal scrollbar for sidebar */
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: transparent;
+  border-right: 1px solid #d1d9e6;
+  box-shadow: 2px 0 2px rgba(0,0,0,0.05);
+  padding: 0 0 20px 0; /* Add bottom padding */
+  margin: 0; /* Ensure no margin so it touches left edge */
+  margin-top: 0;
+  padding-top: 0;
+  overflow-y: auto;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #c0c0c0 #f0f0f0 !important; /* Firefox */
+}
+
+.filter-bar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filter-bar::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.filter-bar::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius: 3px;
+}
+
+/* Sorting bar container */
+.sorting-bar {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 1rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.sorting-bar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Sorting button styles */
+.sorting-button {
+  flex: 0 0 auto;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px; /* pill shape */
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sorting-button.selected {
+  background-color: #008080; /* teal */
+  color: white;
+  border-color: #008080;
+}
+
+.sorting-button:hover {
+  background-color: #006666;
+  color: white;
+  border-color: #006666;
+}
+
+/* Responsive: dropdown for sorting on small screens */
+@media (max-width: 768px) {
+  .sorting-bar {
+    display: none;
+  }
+}
+
+/* +1 More button styles */
+.more-button {
+  color: #02475b;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+}
+
+.more-button:hover {
+  background-color: #02475b;
+  color: white;
+}
+
+/* Existing styles below */
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem; /* reduced spacing below the header row */
+}
+
+.filter-title {
+  font-weight: bold;
+  font-size: 1.25rem; /* slightly larger font */
+  margin: 0;
+}
+
+.clear-all-btn {
+  background: none;
+  border: none;
+  color: #02475b;
+  font-size: 1rem; /* increased font size */
+  cursor: pointer;
+  padding: 0;
+  margin-left: 75px;
+}
+
+.near-me-btn {
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  width: 30%;
+  cursor: pointer;
+  border: 1px solid #02475b; /* dark green border */
+  color: #02475b; /* dark green text */
+  border-radius: 8px; /* rounded corners */
+  background: transparent;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-right: 10px;
+  
+}
+
+/* Filter option titles */
+.filter-group h3 {
+  font-weight: bold;
+  font-size: 1rem; /* slightly smaller font */
+  margin-bottom: 0.75rem; /* increased gap below title */
+}
+
+/* Filter option labels */
+.filter-group label {
+  font-weight: normal; /* not bold */
+  font-size: 0.875rem; /* smaller text size */
+  display: block;
+  margin-bottom: 0.5rem; /* increased gap between options */
+}
+
+/* Custom square checkboxes */
+.filter-bar input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #555;
+  border-radius: 0;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.filter-bar input[type="checkbox"]:checked {
+  background-color: #02475b;
+  border-color: #02475b;
+}
+
+.filter-bar input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Custom square radio buttons */
+.filter-bar input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #555;
+  border-radius: 0;
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.filter-bar input[type="radio"]:checked {
+  background-color: #006400;
+  border-color: #006400;
+}
+
+.filter-bar input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 0;
+}

@@ -1,0 +1,230 @@
+.doctor-card {
+  display: flex;
+  flex-direction: row; /* Changed from column to row to align image left */
+  justify-content: space-between; /* Space between content and button */
+  gap: 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  height: 100%; /* Full height for flex alignment */
+  align-items: center; /* vertically center items */
+}
+
+.doctor-left {
+  flex: 0 0 100px;
+  margin-top: 0;
+}
+
+.doctor-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px; /* square with rounded corners */
+  object-fit: cover;
+  margin: 0;
+}
+
+.doctor-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center; /* vertically center content */
+}
+
+.doctor-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #222;
+  line-height: 1.2;
+}
+
+.doctor-specialty {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 2px;
+  font-weight: 550;
+}
+
+.doctor-clinic-info {
+  font-size: 0.80rem;
+  font-weight: 550;
+  color: #888;
+  margin-top: 4px;
+}
+
+.doctor-location {
+  font-size: 0.80rem;
+  font-weight: 550;
+  color: #888;
+  margin-top: 4px;
+}
+
+.featured-badge {
+  background-color: #ffd700; /* gold */
+  color: #4b3b00;
+  border: 1px solid #e6c200;
+  font-weight: 700;
+}
+
+.doctor-experience-qualification {
+  font-weight: 700;
+  color: #3b3fc7; /* blue */
+  font-size: 0.8rem;
+  margin-top: 4px;
+  text-transform: uppercase;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.doctor-center > div {
+  margin-bottom: 4px;
+}
+
+.doctor-review {
+  margin-top: 8px;
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.green-badge {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.gold-badge {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.orange-badge {
+  background-color: #ffe5b4;
+  color: #b36b00;
+  border: 1px solid #ffcc66;
+}
+
+.doctor-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  min-width: 200px;
+  margin-top: auto; /* Push button group to bottom */
+}
+
+.doctor-price-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.doctor-fees {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #222;
+  margin-right: 100px;
+}
+
+.consult-btn {
+  width: 100%;
+  padding: 15px 50px;
+  border: 1px solid #02475b; /* teal border */
+  background-color: white;
+  color: #02475b; /* teal text */
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.1rem;
+  margin-top: 0; /* Remove margin-top */
+  margin-bottom: 8px;
+}
+
+.consult-btn:hover {
+  background-color: #7cc3ca; /* darker teal */
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 102, 102, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visit-btn {
+  width: 100%;
+  padding: 12px 24px;
+  border: 2px solid #ff6600; /* orange border */
+  background-color: white;
+  color: #ff6600;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 0; /* Remove margin-top */
+  margin-left: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.visit-btn:hover {
+  background-color: #ff6600;
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 102, 0, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: auto; /* Push button group to bottom */
+}
+
+.doctor-availability {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 8px;
+  text-align: right;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .doctor-card {
+    flex-direction: column;
+    align-items: center;
+  }
+  .doctor-left {
+    margin-bottom: 16px;
+  }
+  .doctor-center {
+    text-align: center;
+  }
+  .doctor-right {
+    flex-direction: row;
+    justify-content: center;
+    min-width: auto;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .button-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .consult-btn, .visit-btn {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 12px;
+  }
+}

@@ -1,0 +1,53 @@
+.banner {
+  background-color: white;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.breadcrumbs {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.banner-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.doctor-count {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .banner {
+    padding: 0 10px;
+  }
+
+  .breadcrumbs {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .banner-content h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .doctor-count {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}

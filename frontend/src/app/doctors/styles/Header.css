@@ -1,0 +1,362 @@
+.header-container {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  }
+  
+  .header-inner-container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-left: 24px; /* pl-6 /
+  padding-right: 24px; / pr-6 */
+  }
+  
+  .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px; /* increased height */
+  }
+  
+  .header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  }
+  
+  .logo-image {
+  height: 100px;
+  }
+  
+.location-address-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.location-icon-vertical {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.location-address-texts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+  white-space: normal;
+}
+
+.location-label-vertical {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.2;
+}
+
+.address-label-vertical {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.2;
+}
+
+.location-address-container:hover {
+  cursor: pointer;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  min-width: 150px;
+  z-index: 10;
+  padding: 8px 0;
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on parent hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .location-address-container {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-address-container {
+    flex-direction: row;
+    align-items: center;
+  }
+  .location-address-texts {
+    flex-direction: row;
+    gap: 6px;
+  }
+  .location-label-vertical, .address-label-vertical {
+    font-size: 12px;
+  }
+}
+
+.location-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.location-label, .address-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  color: #666;
+  user-select: none;
+}
+
+.selectors-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  min-width: 150px;
+  z-index: 10;
+  padding: 8px 0;
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on parent hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .selectors-container {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .selectors-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+  
+  .header-middle {
+  flex-basis: 40%; /* stretch to at least 40% width */
+  display: flex;
+  justify-content: center;
+  }
+  
+  .search-input-container {
+  position: relative;
+  width: 100%;
+  }
+  
+  .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #999;
+  pointer-events: none;
+  }
+  
+  .search-bar {
+ 
+  width: 600px;
+  padding: 10px 20px 10px 40px; /* increased padding for larger input */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #6d6b6b;
+  }
+  
+  .search-bar::placeholder {
+  color: #b8b6b6;
+  }
+  
+  .header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  }
+  
+  .login-btn {
+  background-color: #ffffff;
+  color: #02475b;
+  padding: 6px 16px; /* increased padding for larger button */
+  cursor: pointer;
+  font-weight: 600;  
+  font-size: 16px; 
+  border: 1px solid;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 8px; 
+  }
+
+.login-btn:hover {
+  background-color: #ffffff !important;
+  color: rgb(30, 47, 37) !important;
+  border-color: initial !important;
+  cursor: pointer;
+  }
+
+  
+  .login-icon {
+  width: 30px; /* increased size */
+  height: 28px; /* increased size */
+  margin-left: 12px; /* changed margin to left */
+  object-fit: contain;
+  }
+  
+  .secondary-nav {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  gap: 30px;
+  border-top: 1px solid #ddd;
+  flex-wrap: nowrap;
+  margin-left: 90px;
+  margin-right: 90px;
+  }
+  
+  .secondary-nav .nav-item {
+  text-decoration: none;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  flex-grow: 1;
+  text-align: center;
+  white-space: nowrap;
+  }
+ 
+  
+  .new-badge {
+  background-color: #32329d;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 6px;
+  vertical-align: middle;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+  .header {
+  flex-direction: column;
+  height: auto;
+  padding: 10px 0;
+  }
+  
+  .header-left,
+  .header-middle,
+  .header-right {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 8px;
+  }
+  
+  .header-middle {
+  order: 3;
+  }
+  
+  .search-bar {
+  max-width: 100%;
+  width: 100%;
+  }
+  
+  .secondary-nav {
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 0;
+  }
+  
+  .secondary-nav .nav-item {
+  flex: 1 1 45%;
+  text-align: center;
+  padding-bottom: 6px;
+  }
+  }
+  
+  @media (max-width: 480px) {
+  .header-left,
+  .header-middle,
+  .header-right {
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  .header-right {
+  margin-top: 8px;
+  }
+  
+  .secondary-nav .nav-item {
+  flex: 1 1 100%;
+  }
+  }
