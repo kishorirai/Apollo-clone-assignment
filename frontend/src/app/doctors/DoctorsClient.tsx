@@ -83,7 +83,7 @@ export default function DoctorsClient() {
       setLoading(true);
       setError(null);
       axios
-        .get("http://localhost:5000/api/doctors", { params: { page: pageToFetch } })
+        .get("https://apollo-clone-backend-4wtj.onrender.com", { params: { page: pageToFetch } })
         .then((res) => {
           const doctorsWithDefaults = res.data.data.map((doc: any) => {
             const consultationModes = doc.consultationModes || [];
